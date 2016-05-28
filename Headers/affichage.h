@@ -15,8 +15,8 @@ public:
 private:
 	int nombreLignes, nombreColonnes;
 	unsigned char couleurGrille[3], couleurJoueur1[3], couleurJoueur2[3];
-	/*void actualiseGrille(CImgDisplay disp);
-	vector<int> clic(int nombreColonnes, int nombreLignes);*/
+	void actualiseGrille(CImgDisplay disp);
+	vector<int> clic(int nombreColonnes, int nombreLignes, CImgDisplay disp);
 };
 
 #endif __AFFICHAGE__
