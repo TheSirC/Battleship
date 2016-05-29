@@ -1,23 +1,9 @@
 #ifndef _MENU_
 #define _MENU_
 
-#include <string>
-#include <vector>
+#include "optionMenu.h"
 
 using namespace std;
-
-class Menu;
-
-class OptionMenu
-{
-	string nom_;
-	string description_;
-public:
-	OptionMenu(const string &nom, const string &description);
-	string getNom() const { return nom_; }
-	string getDescription() const { return description_; }
-};
-
 
 class Menu
 {
