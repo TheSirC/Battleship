@@ -1,0 +1,49 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\date{}
+\title{Convention d'écriture et liste des procédures}
+\begin{document}
+	\maketitle
+	Ce docuement sert à produire un code qui est lisible et correctible par l'ensemble de nous deux. Ce sont des règles de bienséance de code.\\
+	 Le diagramme de clase devra \emph{\texttt{\underline{\textbf{TOUJOURS}}} être à jour}. Le document ici-présent sera mis-à-jour périodiquement vis-à-vis de celui-ci.
+	\section{Convention d'écriture}
+		\begin{description}
+			\item[Les noms des fonctions et de variables] commenceront avec une minuscule et prendront une majuscule à chaque début de nouveau mot (e.g. \texttt{laPetiteFonction (Type laPetiteVariable, Type laPetiteVariablePrivee\_)})
+			\item[Les noms de variables] seront explicites vis-à-vis de leurs contenus
+			\item[Les noms des fonctions] seront explicites vis-à-vis de leurs utilisations
+			\item[La définition des fonctions] commencera par un commentaire résumant en \emph{UNE} phrase : le fonctionnement de la fonction, ses arguments d'entrée et ses arguments de sortie.
+			\item[Les commentaires] seront obligatoires pour les parties peu claires du code
+			\item[Les champs (variables inclus dans les classes) privés] auront des "\_" à la fin de leurs noms (e.g. \texttt{Personne JoueurHumain.nom\_})
+			\item[Un ficher source appelé \texttt{test.cpp}] sera utilisé pour tester le fonctionnement du code de \emph{CHAQUE} partie du code.
+		\end{description}
+		
+	\section{Listes des procédures}
+		\subsection{De la classe \texttt{Affichage}}
+			\subsubsection{\texttt{actualiseGrille}}
+			\subsubsection{\texttt{clic}}
+				\paragraph{Prototype}
+					int clic();
+				\paragraph{Description}
+					Renvoi le entiers de la position relative du clic.
+		\subsection{De la classe \texttt{Jeu}}
+			\subsubsection{\texttt{changerJoueur}}
+			\subsubsection{\texttt{getGrille}}
+		\subsection{De la classe \texttt{GrilleLogique}}
+			\subsubsection{\texttt{afficher}}
+			\subsubsection{\texttt{renvoiPositionBateau}}
+		\subsection{De la classe \texttt{Personne}}
+			\subsubsection{Construteur \texttt{Personne}}
+			\subsubsection{\texttt{passerTourSuivant}}
+			\subsubsection{\texttt{choixCible}}
+		\subsection{De la classe \texttt{JoueurHumain}}
+			\subsubsection{\texttt{choixCible}}
+		\subsection{De la classe \texttt{JoueurOrdi}}
+			\subsubsection{\texttt{choixCibleOrdi}}
+		\subsection{De la classe \texttt{Bateau}}
+			
+		\subsection{De la classe \texttt{menuBatailleNavale}}
+		\subsection{De la classe \texttt{Menu}}
+		\subsection{De la classe \texttt{OptionMenu}}
+	
+\end{document}
