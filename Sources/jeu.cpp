@@ -45,6 +45,13 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 		// Déroulement du jeu
 		while (!partieTerminee)
 		{
+				if (!quelJoueur_)
+				{
+						cout << "C'est votre tour !" << endl;
+						int clicX1 = Grille.coordonnesClic[0], clicY1 = Grille.coordonnesClic[1];
+						if ((clicX1<0) || (clicX1>Grille.getNombreLignes()) || (clicY1<0) || (clicY1>Grille.getNombreColonnes()))
+								continue;
+				}
 				
 		}
 }

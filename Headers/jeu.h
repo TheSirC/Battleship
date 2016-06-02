@@ -28,8 +28,9 @@ class Jeu
 
 				void setNombreBateau(int nombreBateau) { nombreBateau = nombreBateau_; }
 				int getNombreBateau() { return nombreBateau_; }
+
 		private:
-				bool quelJoueur_;
+				bool quelJoueur_ = 0; // Booléen codant le joueur du tour actuel : 0 pour l'humain, 1  pour l'IA
 				int nombreBateau_;
 };
 
