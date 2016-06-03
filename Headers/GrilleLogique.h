@@ -1,21 +1,22 @@
 #include <vector>
 #include <string>
-#include <Jeu.h>
+#include <iostream>
+#include "../Headers/Bateau.h"
 
 using namespace std;
 
-template <class Grille> class GrilleLogique /// modèle diapo 129 type template => tableaux (séance 5)
+class GrilleLogique /// modèle diapo 129 type template => tableaux (séance 5)
 {
 	int nbLignes_;
 	int nbColonnes_;
-	Grille * Grille_;
-	vector <Bateau> Flotte; // contient les bateaux de la partie
+	vector <Bateau> *Flotte; // contient les positions des bateaux
 
-	public;
+public:
 	GrilleLogique(int nbLignes_ = 10, int nbColonnes_ = 10); // constructeur
 	~GrilleLogique();// destructeur
 	void SetPositionBateaux(); // renvoie la position des bateaux (sélectionnés)
 	void GetPositionBateaux(); // entre la  position d'un bateau
+	void AfficherParametres(); //renvoie le nb de colonnes et de cases
 
-	
+
 };

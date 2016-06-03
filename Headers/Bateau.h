@@ -1,4 +1,4 @@
-#include <Personne.h>
+//#include <Personne.h>
 #include <iostream>
 #include <vector>
 
@@ -11,12 +11,11 @@ class Bateau
 	int positionX_; // position de la colonne de la "tête" du bateau
 	int positionY_; // position de la ligne de la "tête" du bateau
 	int tailleBat_; //taille du bateau
-	int PositionTete_;
-	vector <bool> casesBateau_; // indique quels cases de la grille occupe le bateau
+	string orientation;
+	vector <int> casesBateau_; // indique quels cases de la grille occupe le bateau
 	public:
-	Bateau bateau();
-	Bateau bateau(int positionX_ = 1, int  positionY_ = 1, int tailleBat = 4, int PositionTete, vector <bool> cases); // constructeur
-	void BateauTouche(int position,bool casesBateau);
+	Bateau(string orientation="nord",int positionX_ = 1, int  positionY_ = 1, int tailleBat_ = 4); // constructeur
+	void BateauTouche(int positionX,int positionY);
 	int lienGrille(int postionTab, int casesBateau);
 
 
