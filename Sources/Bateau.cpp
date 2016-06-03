@@ -1,14 +1,21 @@
 
-
-#include <Bateau.h>
+#include "../Headers/Bateau.h"
 #include <vector>
 
 
 
-Bateau :: bateau(int positionX, int  positionY, int taille, vector <bool> cases)
+Bateau::Bateau(string orientation, int positionX, int  positionY, int taille)
 {
-	positionX_ = positionX;
-	positionY_ = positionY;
+
+	if (positionX <= 0)
+		positionX_ = 1;
+	else
+		positionX_ = positionX;
+	if (positionY <= 0)
+		positionY_ = 1;
+	else
+		positionY_ = positionY;
+
 	tailleBat_ = taille;
-	casesBateau_
+
 }
