@@ -23,4 +23,6 @@ class Bateau
 	Bateau(int orientation= 0, int tailleBat_ = 4); // constructeur
 	void BateauTouche(int positionX,int positionY);
 	int lienGrille(int postionTab, int casesBateau);
+
+
 };

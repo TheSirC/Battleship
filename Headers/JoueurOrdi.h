@@ -12,5 +12,5 @@ public:
 	void ChoixCible(int nbLignes, int nbColonnes);
 	const int getCibleX() { return CibleX_; } // méthodes en lignes
 	const int getCibleY() { return CibleY_; }
-	void ajouterBateau(int nbColonnes, int nbLignes, Personne Ordi, int i);
+	void ajouterBateau(int nbColonnes, int nbLignes, int i);
 };

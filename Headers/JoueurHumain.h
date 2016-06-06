@@ -11,5 +11,5 @@ public:
 	const int getCibleX() {return CibleX_; } // méthodes en lignes
 	const int getCibleY() { return CibleY_; }
 
-	void ajouterBateau(int cX1, int cY1, int cX2, int cY2, Personne Joueur, int i);
+	void ajouterBateau(int cX1, int cY1, int cX2, int cY2, int i);
 };

@@ -18,6 +18,7 @@ public:
 	void setNbBateaux(int n) { nbBateaux_ = n; }
 	string getNom() { return nom_; }
 	int getNbBateaux() {return nbBateaux_; }
+	vector<Bateau>* getFlotte() { return &flotte_; }
 
 	virtual void ajouterBateau();
 	virtual void ChoixCible(); //on récupère la méthode choixCible soit de JoueurHumain, soit de JoueurOrdi
