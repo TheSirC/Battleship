@@ -7,18 +7,18 @@ using namespace std;
 
 class Personne
 {
+protected:
 	string nom_;
 	int nbBateaux_;
 	vector<Bateau> flotte_;
 public:
-	Personne(const string nom_, int NbBateaux_ = 6);
 
+	Personne(const string &nom_="", int NbBateaux_ = 6);
 	void setNom(string nom) { nom_ = nom; }
 	void setNbBateaux(int n) { nbBateaux_ = n; }
 	string getNom() { return nom_; }
 	int getNbBateaux() {return nbBateaux_; }
 
-	void ajouterBateau(int cX1, int cY1, int cX2, int cY2,Personne Joueur, int i );
-	virtual void ChoixCible(); //méthode virtuelle
-
+	virtual void ajouterBateau();
+	virtual void ChoixCible(); //on récupère la méthode choixCible soit de JoueurHumain, soit de JoueurOrdi
 };
