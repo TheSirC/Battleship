@@ -1,22 +1,27 @@
 #include <vector>
-#include <string>
 #include <iostream>
-#include "../Headers/Bateau.h"
 
 using namespace std;
 
-class GrilleLogique /// modèle diapo 129 type template => tableaux (séance 5)
+#ifndef _GRILLELOGIQUE_
+#define _GRILLELOGIQUE_
+
+class GrilleLogique
 {
-	int nbLignes_;
-	int nbColonnes_;
-	vector <Bateau> *Flotte; // contient les positions des bateaux
+		int nombreLignes_ = 10, nombreColonnes_ = 10;
+		int** Grille_; // Pointeur vers la grille 2D
 
 public:
-	GrilleLogique(int nbLignes_ = 10, int nbColonnes_ = 10); // constructeur
-	~GrilleLogique();// destructeur
-	void SetPositionBateaux(); // renvoie la position des bateaux (sélectionnés)
-	void GetPositionBateaux(); // entre la  position d'un bateau
-	void AfficherParametres(); //renvoie le nb de colonnes et de cases
+		GrilleLogique(int nombreLignes_ = 10, int nombreColonnes_= 10);
+		~GrilleLogique();
 
+		int getEtatCase(int x, int y); // Retourne l'état de la case donnée en paramètre : 1 -> Mer, 2 -> Mer touchée, 3 -> Bateau découvert, 4 -> Bateau touché 
+		void setEtatCase(int x, int y, int Etat); // Définis l'état de la case donnée en paramètre : 1 -> Mer, 2 -> Mer touchée, 3 -> Bateau découvert, 4 -> Bateau touché 
+		bool tireSurCase(int x, int y); // Renvoi de la présence d'un bateau ou non (respectivement 0 ou 1)
 
+		void afficherGrille(); 
 };
+
+
+#endif // !_GRILLELOGIQUE_
+
