@@ -7,15 +7,16 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 	affichage Grille(couleurGrille, 10, 10);
 
 	// Initilaisation de la grille logique
-	grilleLogique grilleLogique();
+	GrilleLogique grilleLogique = GrilleLogique();
 
 	// Initilisation des joueurs (humain et IA)
-	JoueurHumain* Joueur1 = new JoueurHumain;
-	JoueurOrdi* Joueur2 = new JoueurOrdi;
+	JoueurHumain Joueur1 = JoueurHumain(NomJoueur, nombreBateau_);
+	JoueurOrdi Joueur2 = JoueurOrdi();
 
 	// Placement des bateaux du joueur humain
 	cout << "Placez vos " << nombreBateau_ << " bateaux." << endl;
-	for (size_t i = 0; i < Joueur1->listeBateau.size(); i++)
+	vector<Bateau> flotte = Joueur1.Personne::getFlotte();
+	for (int i = 0; i < flotte.size(); i++)
 	{
 		cout << " Placez la proue du bateau." << endl;
 		int cX1 = Grille.coordonnesClic[0], cY1 = Grille.coordonnesClic[1];
@@ -26,7 +27,8 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 
 	// Placement des bateaux de l'IA
 	cout << "Placement des bateaux par votre adversaire." << endl;
-	for (size_t i = 0; i < Joueur2->listeBateau.size(); i++)
+	vector<Bateau> flotte = Joueur2.Personne::getFlotte();
+	for (int i = 0; i < flotte.size(); i++)
 	{
 		int cX1, cX2, cY1, cY2;
 		bool aReussiATirer1 = 0;
@@ -35,10 +37,10 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 		
 		while (!aReussiATirer1)
 		{
-			Joueur2.choixCibleOrdi(Grille.nombreLignes, Grille.nombreColonnes);
+			Joueur2.ChoixCible(Grille.getNombreLignes(), Grille.getNombreColonnes());
 			int cX1 = Joueur2.getCibleX(); // Première coordonnee X choisie par l'ordinateur
 			int cY1 = Joueur2.getCibleY(); // Première coordonnee Y choisie par l'ordinateur
-			switch (grilleLogique.etatCase(cX1, cY1))
+			switch (grilleLogique.getEtatCase(cX1, cY1))
 			{
 				case 1:
 					aReussiATirer1 = !aReussiATirer1;
@@ -53,10 +55,10 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 
 			while (!aReussiATirer2)
 			{
-				Joueur2.choixCibleOrdi(Grille.nombreLignes, Grille.nombreColonnes);
+				Joueur2.ChoixCible(Grille.getNombreLignes(), Grille.getNombreColonnes());
 				cX2 = Joueur2.getCibleX(); // Deuxième coordonnee X choisie par l'ordinateur
 				cY2 = Joueur2.getCibleY(); // Deuxième coordonnee Y choisie par l'ordinateur
-				switch (grilleLogique.etatCase(cX2, cY2))
+				switch (grilleLogique.getEtatCase(cX2, cY2))
 				{
 				case 1:
 					aReussiATirer2 = !aReussiATirer2;
@@ -69,7 +71,7 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 				}
 
 			}
-			Joueur2.ajouterBateau(cX1, cY1, cX2, cY2, i);
+			Joueur2.ajouterBateau(Grille.getNombreLignes(), Grille.getNombreColonnes(), i);
 		
 	}
 

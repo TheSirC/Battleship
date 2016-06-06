@@ -1,6 +1,10 @@
 #include "../Headers/JoueurOrdi.h"
 #include <stdlib.h> // pour la fonction rand()
 
+JoueurOrdi::JoueurOrdi(const string &nom, int NbBateaux) : Personne(nom, 6)
+{
+
+}
 
 void JoueurOrdi::ChoixCible(int nbLignes, int nbColonnes)
 {

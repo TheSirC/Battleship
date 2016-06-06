@@ -2,6 +2,6 @@
 
 int main()
 {
-		Jeu *BatailleNavale = new Jeu;
+		Jeu *BatailleNavale = new Jeu("Humain",4);
 
 }
