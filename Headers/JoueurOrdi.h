@@ -1,5 +1,5 @@
-#include "../Headers/Personne.h"
-//#include  "../Headers/Affichage.h"
+#include "Personne.h"
+
 using namespace std;
 
 class JoueurOrdi : public Personne
@@ -8,7 +8,7 @@ class JoueurOrdi : public Personne
 	int CibleY_;
 	
 public:
-	JoueurOrdi();
+	JoueurOrdi(const string &nom = "Ordinateur", int NbBateaux = 6);
 	void ChoixCible(int nbLignes, int nbColonnes);
 	const int getCibleX() { return CibleX_; } // méthodes en lignes
 	const int getCibleY() { return CibleY_; }

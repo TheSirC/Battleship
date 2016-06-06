@@ -3,16 +3,16 @@
 #include <string>
 
 #include "affichage.h"
+#include "GrilleLogique.h"
+#include "JoueurHumain.h"
+#include "JoueurOrdi.h"
+#include "menu.h"
+
 
 using namespace std;
 
 #ifndef _JEU_
 #define _JEU_
-
-class JoueurHumain;
-class JoueurOrdi;
-class GrilleLogique;
-class Bateau;
 
 class Jeu
 {
