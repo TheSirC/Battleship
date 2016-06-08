@@ -94,20 +94,21 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 				bool aReussiATirer = 0;
 				while (!aReussiATirer)
 				{
-					Joueur2.choixCibleOrdi(Grille.nombreLignes, Grille.nombreColonnes);
-					int cOX = Joueur2.getCibleX(); // Coordonnee X choisie par l'ordinateur
-					int cOY = Joueur2.getCibleY(); // Coordonnee Y choisie par l'ordinateur
-					switch (grilleLogique.etatCase(cOX, cOY)) :
-			case 1:
-				aReussiATirer = !aReussiATirer;
-				break;
-			case 3:
-				aReussiATirer = !aReussiATirer;
-				break;
-			default:
-				break;
+						Joueur2.ChoixCible(Grille.getNombreLignes(), Grille.getNombreColonnes());
+						int cOX = Joueur2.getCibleX(); // Coordonnee X choisie par l'ordinateur
+						int cOY = Joueur2.getCibleY(); // Coordonnee Y choisie par l'ordinateur
+						switch (grilleLogique.getEtatCase(cOX, cOY))
+						{
+								case 1:
+										aReussiATirer = !aReussiATirer;
+										break;
+								case 3:
+										aReussiATirer = !aReussiATirer;
+										break;
+								default:
+										break;
+						}
 				}
-
 				quelJoueur_ = !quelJoueur_;
 			}
 
