@@ -83,3 +83,34 @@ void GrilleLogique::afficherGrille()
 				cout << endl;
 		}
 }
+
+void GrilleLogique::ajouterBateau(Bateau BateauAAjouter)
+{
+		switch (BateauAAjouter.getOrientation())
+		{
+				case 0:
+						for (int i = BateauAAjouter.getPositionX(); i > BateauAAjouter.getPositionY() + BateauAAjouter.getTaille() ; i--)
+						{
+								setGrille()[BateauAAjouter.getPositionX()][i] = 3;
+						}
+						break;
+				case 1:
+						for (int i = BateauAAjouter.getPositionY(); i < BateauAAjouter.getPositionY() + BateauAAjouter.getTaille(); i++)
+						{
+								setGrille()[BateauAAjouter.getPositionX()][i] = 3;
+						}
+						break;
+				case 2:
+						for (int i = BateauAAjouter.getPositionX(); i < BateauAAjouter.getPositionY() + BateauAAjouter.getTaille(); i++)
+						{
+								setGrille()[BateauAAjouter.getPositionX()][i] = 3;
+						}
+						break;
+				default:
+						for (int i = BateauAAjouter.getPositionY(); i > BateauAAjouter.getPositionY() + BateauAAjouter.getTaille(); i--)
+						{
+								setGrille()[BateauAAjouter.getPositionX()][i] = 3;
+						}
+						break;
+		}
+}

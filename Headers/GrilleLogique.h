@@ -1,6 +1,8 @@
 #include <vector>
 #include <iostream>
 
+#include "bateau.h"
+
 using namespace std;
 
 #ifndef _GRILLELOGIQUE_
@@ -18,6 +20,8 @@ public:
 		int getEtatCase(int x, int y); // Retourne l'état de la case donnée en paramètre : 1 -> Mer, 2 -> Mer touchée, 3 -> Bateau découvert, 4 -> Bateau touché 
 		int** getGrille() { return Grille_; }
 		void setEtatCase(int x, int y, int Etat); // Définis l'état de la case donnée en paramètre : 1 -> Mer, 2 -> Mer touchée, 3 -> Bateau découvert, 4 -> Bateau touché 
+
+		void GrilleLogique::ajouterBateau(Bateau BateauAAjouter);
 		bool tireSurCase(int x, int y); // Renvoi de la présence d'un bateau ou non (respectivement 0 ou 1)
 
 		void afficherGrille(); 
