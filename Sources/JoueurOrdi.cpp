@@ -14,22 +14,22 @@ void JoueurOrdi::ChoixCible(int nbLignes, int nbColonnes)
 
 void JoueurOrdi::ajouterBateau(int cX1, int cY1, int cX2, int cY2, int i)//
 {
-	getFlotte()->at(i).setPositionX(cX1);
-	getFlotte()->at(i).setPositionY(cY1);
+	getFlotte().at(i).setPositionX(cX1);
+	getFlotte().at(i).setPositionY(cY1);
 	if (cX1 >= cX2)
 	{
-		getFlotte()->at(i).setOrientation(3);
+		getFlotte().at(i).setOrientation(3);
 	}
 	else if (cY1 >= cY2)
 	{
-		getFlotte()->at(i).setOrientation(2);
+		getFlotte().at(i).setOrientation(2);
 	}
 	else if (cY1 < cY2)
 	{
-		getFlotte()->at(i).setOrientation(0);
+		getFlotte().at(i).setOrientation(0);
 	}
 	else
 	{
-		getFlotte()->at(i).setOrientation(1);
+		getFlotte().at(i).setOrientation(1);
 	}
 }

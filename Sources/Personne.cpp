@@ -1,6 +1,6 @@
 #include "../Headers/Personne.h"
 #include "../Headers/Bateau.h"
-//#include "../Headers/GrilleGraphique.h" //appel de grille?
+
 #include <stdlib.h>
 
 
