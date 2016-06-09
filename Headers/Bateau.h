@@ -18,7 +18,7 @@ class Bateau
 		int setPositionY(int positionY) { positionY_ = positionY; }
 		int setOrientation(int orientation) { orientation_ = orientation; }
 		int getPositionX() { return positionX_ ; }
-		int getPositionX() { return positionY_ ; }
+		int getPositionY() { return positionY_ ; }
 		int getOrientation() { return orientation_; }
 	Bateau(int orientation= 0, int tailleBat_ = 4); // constructeur
 	void BateauTouche(int positionX,int positionY);
