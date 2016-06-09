@@ -18,8 +18,8 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 	affichage Grille1(couleurGrille1, 10, 10); // Affichage li� � la flotte de l'I.A.
 
 	// Initilaisation de la grille logique
-	GrilleLogique grilleHumain = GrilleLogique();
-	GrilleLogique grilleOrdi = GrilleLogique();
+	GrilleLogique grilleHumain;
+	GrilleLogique grilleOrdi;
 
 	// Initilisation des joueurs (humain et IA)
 	JoueurHumain Joueur1 = JoueurHumain(NomJoueur, nombreBateau_);
@@ -27,27 +27,35 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 
 	// Placement des bateaux du joueur humain
 	cout << "Placez vos " << nombreBateau_ << " bateaux." << endl;
-	vector<Bateau> flotte = Joueur1.Personne::getFlotte();
-	for (int i = 0; i < flotte.size(); i++)
+	vector<Bateau> flotteHumain = Joueur1.Personne::getFlotte();
+	for (int i = 0; i < flotteHumain.size(); i++)
 	{
-			do {
-				cout << " Placez la proue du bateau." << endl;
-				int cX1 = Grille.coordonnesClic[0], cY1 = Grille.coordonnesClic[1];
-			} while(GrilleLogique.getEtatCase(cX1,cY1) != 1);
+			cout << " Placez la proue du bateau." << endl;
+			int cX1 = Grille.coordonnesClic[0], cY1 = Grille.coordonnesClic[1];
+			while (grilleHumain.getEtatCase(cX1, cY1) != 1)
+			{
+					cout << "Oups ! Ce n'est pas possible. Placez la proue du bateau." << endl;
+					int cX1 = Grille.coordonnesClic[0], cY1 = Grille.coordonnesClic[1];
+			}
 
-			do {
-				cout << "Selectionnez l'orientation du bateau." << endl;
-				int cX2 = Grille.coordonnesClic[0], cY2 = Grille.coordonnesClic[1];
-			} while(GrilleLogique.getEtatCase(cX2,cY2) != 1);
+
+			cout << "Selectionnez l'orientation du bateau." << endl;
+			int cX2 = Grille.coordonnesClic[0], cY2 = Grille.coordonnesClic[1];
+			while (grilleHumain.getEtatCase(cX2, cY2) != 1)
+			{
+					cout << "Oups ! Ce n'est pas possible. Selectionnez l'orientation du bateau." << endl;
+					int cX2 = Grille.coordonnesClic[0], cY2 = Grille.coordonnesClic[1];
+			}
 
 			Joueur1.ajouterBateau(cX1, cY1, cX2, cY2, i);
+			grilleHumain.ajouterBateau(flotteHumain[i]);
 	}
 
 
 	// Placement des bateaux de l'IA
 	cout << "Placement des bateaux par votre adversaire." << endl;
-	vector<Bateau> flotte = Joueur2.Personne::getFlotte();
-	for (int i = 0; i < flotte.size(); i++)
+	vector<Bateau> flotteOrdi = Joueur2.Personne::getFlotte();
+	for (int i = 0; i < flotteOrdi.size(); i++)
 	{
 		int cX1, cX2, cY1, cY2;
 		bool aReussiATirer1 = 0;
@@ -90,7 +98,7 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 				}
 
 			}
-			Joueur2.ajouterBateau(Grille.getNombreLignes(), Grille.getNombreColonnes(), i);
+			Joueur2.ajouterBateau(cX1, cY1, cX2,cY2,i);
 
 	}
 
@@ -104,7 +112,7 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 				// Decompte des pertes dans la flotte pour condition d'arret
 				int pertes = 0;
 				int nbBateauFlotte = 0;
-				for (int i = 0; i < grilleHumain.size(); i++)
+				for (int i = 0; i < grilleHumain.getGrille().size(); i++)
 				{
 					for (int j = 0; j < grilleHumain[i].size(); j++)
 					{
@@ -115,21 +123,22 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 					}
 				}
 				// Decompte du nombre de cases effectifs de la flotte pour comparaison avec les pertes
+				int casesBateau = 0;
 				for (int i = 0; i < Joueur1.getFlotte().size(); i++)
 				{
-
+						casesBateau += Joueur1.getFlotte()[i].getTaille();
 				}
-				if (pertes == Joueur1.)
+				if (pertes == casesBateau)
 				{
 						partieTerminee = !partieTerminee;
 				}
 				else
 				{
-						int clicX1 = Grille.coordonnesClic[0], clicY1 = Grille.coordonnesClic[1];
-						while ((clicX1<0) || (clicX1>Grille.getNombreLignes()) || (clicY1<0) || (clicY1>Grille.getNombreColonnes()))
+						int clicX1 = Grille1.coordonnesClic[0], clicY1 = Grille1.coordonnesClic[1];
+						while ((clicX1<0) || (clicX1>Grille1.getNombreLignes()) || (clicY1<0) || (clicY1>Grille1.getNombreColonnes()))
 						{
 								cout << "Oups ! Le clic enregistre n'est pas correct ! Reessayez !" << endl;
-								int clicX1 = Grille.coordonnesClic[0], clicY1 = Grille.coordonnesClic[1];
+								int clicX1 = Grille1.coordonnesClic[0], clicY1 = Grille1.coordonnesClic[1];
 						}
 						bool aReussiATirer = 0;
 						while (!aReussiATirer)
@@ -155,10 +164,32 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 			{
 				// Tour de l'IA
 				cout << "C'est au tour de votre adversaire." << endl;
-				if (/*Condition de victoire*/1)
+				if (!quelJoueur_)
 				{
-						partieTerminee = !partieTerminee;
-				}
+						cout << "C'est votre tour !" << endl;
+						// Decompte des pertes dans la flotte pour condition d'arret
+						int pertes = 0;
+						int nbBateauFlotte = 0;
+						for (int i = 0; i < grilleOrdi.getGrille().size(); i++)
+						{
+								for (int j = 0; j < grilleOrdi[i].size(); j++)
+								{
+										if (grilleOrdi[i][j] == 4)
+										{
+												pertes++;
+										}
+								}
+						}
+						// Decompte du nombre de cases effectifs de la flotte pour comparaison avec les pertes
+						int casesBateau = 0;
+						for (int i = 0; i < Joueur1.getFlotte().size(); i++)
+						{
+								casesBateau += Joueur1.getFlotte()[i].getTaille();
+						}
+						if (pertes == casesBateau)
+						{
+								partieTerminee = !partieTerminee;
+						}
 				else
 				{
 						bool aReussiATirer = 0;

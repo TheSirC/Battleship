@@ -2,5 +2,6 @@
 
 int main()
 {
+		Jeu* BatailleNavale = new Jeu("Dadou");
 		return 0;
 }
