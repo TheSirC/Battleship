@@ -16,6 +16,7 @@ public:
 		~GrilleLogique();
 
 		int getEtatCase(int x, int y); // Retourne l'état de la case donnée en paramètre : 1 -> Mer, 2 -> Mer touchée, 3 -> Bateau découvert, 4 -> Bateau touché 
+		int** getGrille() { return Grille_; }
 		void setEtatCase(int x, int y, int Etat); // Définis l'état de la case donnée en paramètre : 1 -> Mer, 2 -> Mer touchée, 3 -> Bateau découvert, 4 -> Bateau touché 
 		bool tireSurCase(int x, int y); // Renvoi de la présence d'un bateau ou non (respectivement 0 ou 1)
 
