@@ -61,7 +61,8 @@ void Menu::executerOption(const string &nom, bool &fin)
 	if (nom == "Quitter") fin = quitter();
 	/*A décommenter lorsque les fonctions idoines seront prêtes*/
 	/*else if (nom == "Jouer") jeu();
-	else if (nom == "Charger") charger();*/
+	else if (nom == "Charger") charger();
+	else if (nom == "Sauvegarder") sauvegarde();*/
 	else {
 		cout << "Option inexistante" << endl;
 		system("pause");
