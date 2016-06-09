@@ -3,8 +3,6 @@
 
 class JoueurHumain : public Personne
 {
-	int CibleX_;
-	int CibleY_;
 public:
 	JoueurHumain(const string &nom_, int NbBateaux_ = 6);
 	void ChoixCible(int CibleX, int CibleY); // enregistrement de la cible indiquée par le clic du joueur

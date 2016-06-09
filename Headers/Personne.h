@@ -12,6 +12,8 @@ protected:
 	string nom_;
 	int nbBateaux_;
 	vector<Bateau> flotte_;
+	int CibleX_;
+	int CibleY_;
 public:
 
 	Personne(const string &nom_="", int NbBateaux_ = 6);
