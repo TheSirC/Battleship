@@ -1,0 +1,21 @@
+﻿page de diagramme des classes + 1 page explicative permettant de faciliter la
+compréhension du correcteur sur vos choix
+
+Page explicative :
+
+C’est la classe Jeu qui sert de véritable pilote lors de la partie.
+A travers celle ci, nous pouvons engager , interagir avec la classe ou encorecontinuer et sauvegarder la partie.
+
+La classe personne va servire de pivot pour interagir avec les classes Joueurs et Bateau afin de centraliser toutes les données correspondants et essentielles à la partie ( a part la grille)
+
+Ce qui nous amène à la classe GrilleLogique, c’est ici que sont centralisée les informations conernant la position de la flotte et les tirs de chacuns des joueurs;
+
+Pour la classe Affichage, elle contient les bibliothèques necessaires à notre interface graphique avec tout les paramètre pour régler notre grille necessaire à notre partie. (Il serait possible de modifier les paramètres de la partie)
+
+La classe MenueBatailleNavale est agrégée dans la classe Jeu en tant que classe qui gère l’affichage.
+
+On définit la position de la proue puis l’orientation du bateau avec deux clics consécutifs.
+
+Les cibles de l’ordinateur se feront de manière aléatoires avec un contrôle des cases ciblées (Quatres états possibles)
+
+Les infos necessaires à notre partie étant les deux joueurs, l’état de la grille et la classe personne. Ce sont eux qu’il faudra enregistrer si l’ont veut reprendre la partie plus tard.
