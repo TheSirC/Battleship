@@ -222,12 +222,6 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 	{
 	}
 
-	void Jeu::changerJoueur()
-	{
-
-		return;
-	}
-
 	vector<int> Jeu::getGrille()
 	{
 		return vector<int>();
