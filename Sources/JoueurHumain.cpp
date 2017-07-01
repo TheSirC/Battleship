@@ -1,6 +1,6 @@
 #include "../Headers/JoueurHumain.h"
 
-//Constructeur avec méthode virtuelle
+// Constructeur avec mÃ©thode virtuelle
 JoueurHumain::JoueurHumain(const string &nom, int NbBateaux) : Personne(nom,6)
 {
 

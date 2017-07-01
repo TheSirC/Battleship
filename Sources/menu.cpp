@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// Definition des methodes de la classe Menu
+// Definition des mÃ©thodes de la classe Menu
 
 Menu::Menu(const string & titre) : titre_(titre)
 {
@@ -59,7 +59,7 @@ void Menu::executerOption(const string &nom, bool &fin)
 {
 	fin = false;
 	if (nom == "Quitter") fin = quitter();
-	/*A décommenter lorsque les fonctions idoines seront prêtes*/
+	/*A dÃ©commenter lorsque les fonctions idoines seront prÃªtes*/
 	/*else if (nom == "Jouer") jeu();
 	else if (nom == "Charger") charger();
 	else if (nom == "Sauvegarder") sauvegarde();*/
@@ -77,12 +77,12 @@ bool Menu::quitter()
 	cout << "Voulez-vous vraiment sortir de l'application (o/n) ? ";
 	cin >> reponse;
 	if ((reponse == "o") || (reponse == "O")) fin = true;
-			
+
 		while ((reponse != "o") || (reponse != "O") || (reponse != "n") || (reponse != "N"))
 		{
 				cout << "Reponse erronnee. Veuillez ecrire 'o' ou 'n' : ";
 				cin >> reponse;
 		}
-	
+
 	return fin;
 }

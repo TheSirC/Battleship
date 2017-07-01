@@ -22,4 +22,4 @@ private:
 		unsigned char couleurGrille[3], couleurJoueur1[3], couleurJoueur2[3];
 };
 
-#endif __AFFICHAGE__
+#endif // __AFFICHAGE__

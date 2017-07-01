@@ -2,14 +2,14 @@
 
 GrilleLogique::GrilleLogique(int nombreLignes_, int nombreColonnes_)
 {
-		// Déclaration de la grille
-		this->Grille_ = new int*[nombreLignes_]; // Déclaration des lignes de la grille 2D
+		// DÃ©claration de la grille
+		this->Grille_ = new int*[nombreLignes_]; // DÃ©claration des lignes de la grille 2D
 		for (int i = 0; i < nombreLignes_; i++)
 		{
-				Grille_[i] = new int[nombreColonnes_]; // Déclaration des colonnes de la grille 2D
+				Grille_[i] = new int[nombreColonnes_]; // DÃ©claration des colonnes de la grille 2D
 		}
 
-		// Initialisation des cases de la grille avec l'état 1 (Mer)
+		// Initialisation des cases de la grille avec l'Ã©tat 1 (Mer)
 		for (int i = 0; i < nombreLignes_; i++)
 		{
 				for (int j = 0; j < nombreColonnes_; j++)
@@ -44,17 +44,17 @@ bool GrilleLogique::tireSurCase(int x, int y)
 {
 	if (Grille_[x][y] == 1)
 	{
-		cout << "Dommage, c'est de l'eau." << endl;
+		cout << "Dommage, c'est de l'eau..." << endl;
 		return 1;
 	}
 	else if (Grille_[x][y] == 3)
 	{
-		cout << "Bien joué ! C'était un bateau !" << endl;
+		cout << "Bien jouÃ© ! C'Ã©tait un bateau !" << endl;
 		return 1;
 	}
 	else
 	{
-		cout << "Vous avez deja bombarde cette case !" << endl;
+		cout << "Vous avez dÃ©jÃ  bombardÃ© cette case !" << endl;
 		return 0;
 	}
 }
@@ -67,7 +67,7 @@ void GrilleLogique::afficherGrille()
 				for (int j = 0; j < nombreColonnes_; j++)
 				{
 					/*cout << " " << Grille_[i][j] << " ";*/
-						if ((Grille_[i][j] == 2) || (Grille_[i][j] == 4)) // Vérifie la condition concernant le fait que la case est déjà été testée
+						if ((Grille_[i][j] == 2) || (Grille_[i][j] == 4)) // VÃ©rifie la condition concernant le fait que la case est dÃ©jÃ  Ã©tÃ© testÃ©e
 						{
 								cout << " X ";
 						}

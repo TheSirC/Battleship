@@ -1,7 +1,7 @@
 #include <vector>
 #include <iostream>
 
-#include "bateau.h"
+#include "Bateau.h"
 
 using namespace std;
 
@@ -17,16 +17,15 @@ public:
 		GrilleLogique(int nombreLignes_ = 10, int nombreColonnes_= 10);
 		~GrilleLogique();
 
-		int getEtatCase(int x, int y); // Retourne l'Ètat de la case donnÈe en paramËtre : 1 -> Mer, 2 -> Mer touchÈe, 3 -> Bateau dÈcouvert, 4 -> Bateau touchÈ 
+		int getEtatCase(int x, int y); // Retourne l'√©tat de la case donn√©e en param√®tre : 1 -> Mer, 2 -> Mer touch√©e, 3 -> Bateau d√©couvert, 4 -> Bateau touch√©
 		int** getGrille() { return Grille_; }
-		void setEtatCase(int x, int y, int Etat); // DÈfinis l'Ètat de la case donnÈe en paramËtre : 1 -> Mer, 2 -> Mer touchÈe, 3 -> Bateau dÈcouvert, 4 -> Bateau touchÈ 
+		void setEtatCase(int x, int y, int Etat); // D√©finis l'√©tat de la case donn√©e en param√®tre : 1 -> Mer, 2 -> Mer touch√©e, 3 -> Bateau d√©couvert, 4 -> Bateau touch√©
 
-		void GrilleLogique::ajouterBateau(Bateau BateauAAjouter);
-		bool tireSurCase(int x, int y); // Renvoi de la prÈsence d'un bateau ou non (respectivement 0 ou 1)
+		void ajouterBateau(Bateau BateauAAjouter);
+		bool tireSurCase(int x, int y); // Renvoi de la pr√©sence d'un bateau ou non (respectivement 0 ou 1)
 
-		void afficherGrille(); 
+		void afficherGrille();
 };
 
 
 #endif // !_GRILLELOGIQUE_
-

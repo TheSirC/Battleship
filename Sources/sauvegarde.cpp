@@ -4,7 +4,7 @@ sauvegarde::sauvegarde(Personne JoueurHumain, Personne JoueurOrdi, Jeu JeuCouran
 {
 		// Appel de la boite de sauvegarde de fichier
 		cout << "Appel de la boite de sauvegarde de fichier" << endl;
-		string nomSave = getSaveFileName("Nom du fichier à sauvegarder :", "Fichiers textes (*.txt *.cpp)");
+		string nomSave = getSaveFileName("Nom du fichier ï¿½ sauvegarder :", "Fichiers textes (*.txt *.cpp)");
 
 		if (nomSave != "")
 				cout << "Nom du fichier : " << nomSave << endl;
@@ -13,7 +13,7 @@ sauvegarde::sauvegarde(Personne JoueurHumain, Personne JoueurOrdi, Jeu JeuCouran
 
 		ofstream flux(nomSave);
 
-		// Enregistrement des paramètres associés au joueur
+		// Enregistrement des paramÃ¨tres associÃ©es au joueur
 		flux << JoueurHumain.getNom() << endl; // Enregistrement du nom du joueur humain
 		flux << JoueurHumain.getNbBateaux() << endl; // Enregistrement du nombre de bateaux du Joueur Humain
 		for (int i = 0; i < JoueurHumain.getFlotte().size(); i++)
@@ -23,7 +23,7 @@ sauvegarde::sauvegarde(Personne JoueurHumain, Personne JoueurOrdi, Jeu JeuCouran
 				flux << JoueurHumain.getFlotte()[i].getOrientation() << endl; // Enregistrement de l'orientation du bateau
 		}
 
-		// Enregistrement des paramètres associés à l'I.A.
+		// Enregistrement des paramÃ¨tres associÃ©es Ã  l'I.A.
 		flux << JoueurOrdi.getNom() << endl; // Enregistrement du nom de l'ordinateur
 		flux << JoueurOrdi.getNbBateaux() << endl; // Enregistrement du nombre de bateaux de l'I.A.
 		for (int i = 0; i < JoueurOrdi.getFlotte().size(); i++)
@@ -33,7 +33,7 @@ sauvegarde::sauvegarde(Personne JoueurHumain, Personne JoueurOrdi, Jeu JeuCouran
 				flux << JoueurOrdi.getFlotte()[i].getOrientation() << endl; // Enregistrement de l'orientation du bateau
 		}
 
-		// Enregistrement des paramètres de parties
+		// Enregistrement des paramÃ¨tres de parties
 		flux << JeuCourant.getJoueur();
 
 		flux.close();
