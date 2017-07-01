@@ -10,12 +10,12 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 		menuBatailleNavale.ajouterOption("Quitter", "Sortir du jeu sans sauvegarder");
 		menuBatailleNavale.executer();
 
-	// Initilaisation de l'affichage
+	// Initialisation de l'affichage
 	unsigned char couleurGrille[3] = { 0, 0, 255 };
 	unsigned char couleurGrille1[3] = { 255, 0, 0 };
 
-	affichage Grille(couleurGrille, 10, 10); // Affichage li� au bateau du joueur humain
-	affichage Grille1(couleurGrille1, 10, 10); // Affichage li� � la flotte de l'I.A.
+	affichage Grille(couleurGrille, 10, 10); // Affichage lié au bateau du joueur humain
+	affichage Grille1(couleurGrille1, 10, 10); // Affichage lié à la flotte de l'I.A.
 
 	// Initilaisation de la grille logique
 	GrilleLogique grilleHumain;
@@ -65,8 +65,8 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 		while (!aReussiATirer1)
 		{
 			Joueur2.ChoixCible(Grille.getNombreLignes(), Grille.getNombreColonnes());
-			int cX1 = Joueur2.getCibleX(); // Premi�re coordonnee X choisie par l'ordinateur
-			int cY1 = Joueur2.getCibleY(); // Premi�re coordonnee Y choisie par l'ordinateur
+			int cX1 = Joueur2.getCibleX(); // Première coordonnee X choisie par l'ordinateur
+			int cY1 = Joueur2.getCibleY(); // Première coordonnee Y choisie par l'ordinateur
 			switch (grilleOrdi.getEtatCase(cX1, cY1))
 			{
 				case 1:
@@ -83,8 +83,8 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 			while (!aReussiATirer2)
 			{
 				Joueur2.ChoixCible(Grille.getNombreLignes(), Grille.getNombreColonnes());
-				cX2 = Joueur2.getCibleX(); // Deuxi�me coordonnee X choisie par l'ordinateur
-				cY2 = Joueur2.getCibleY(); // Deuxi�me coordonnee Y choisie par l'ordinateur
+				cX2 = Joueur2.getCibleX(); // Deuxième coordonnee X choisie par l'ordinateur
+				cY2 = Joueur2.getCibleY(); // Deuxième coordonnee Y choisie par l'ordinateur
 				switch (grilleOrdi.getEtatCase(cX2, cY2))
 				{
 				case 1:
@@ -103,7 +103,7 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 	}
 
 
-		// D�roulement du jeu
+		// Déroulement du jeu
 		while (!partieTerminee)
 		{
 			if (!quelJoueur_)
@@ -167,7 +167,7 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 				if (!quelJoueur_)
 				{
 						cout << "C'est votre tour !" << endl;
-						// Decompte des pertes dans la flotte pour condition d'arret
+						// Décompte des pertes dans la flotte pour condition d'arret
 						int pertes = 0;
 						int nbBateauFlotte = 0;
 						for (int i = 0; i < grilleOrdi.getGrille().size(); i++)
@@ -196,8 +196,8 @@ Jeu::Jeu(string NomJoueur, int nombreBateau_)
 						while (!aReussiATirer)
 						{
 								Joueur2.ChoixCible(Grille.getNombreLignes(), Grille.getNombreColonnes());
-								int cOX = Joueur2.getCibleX(); // Coordonnee X choisie par l'ordinateur
-								int cOY = Joueur2.getCibleY(); // Coordonnee Y choisie par l'ordinateur
+								int cOX = Joueur2.getCibleX(); // Coordonnée X choisie par l'ordinateur
+								int cOY = Joueur2.getCibleY(); // Coordonnée Y choisie par l'ordinateur
 								switch (grilleHumain.getEtatCase(cOX, cOY))
 								{
 								case 1:

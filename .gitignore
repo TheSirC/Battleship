@@ -48,3 +48,11 @@ Temporary Items
 *.aux
 Documents/ConventionsDEcriture.log
 *.gz
+
+Build/
+
+CMakeCache\.txt
+
+CMakeLists\.txt
+
+*.gch

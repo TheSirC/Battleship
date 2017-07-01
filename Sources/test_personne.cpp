@@ -11,19 +11,19 @@ void main()
 	{
 		JoueurOrdi comp;
 		comp.ChoixCible(10, 10);
-		int x = comp.getCibleX(); 
+		int x = comp.getCibleX();
 		int y = comp.getCibleY();
 		cout << "Cible X: " << x << endl;
 		cout << "Cible Y: " << y << endl;
 		cout << "Retirer? [0/1]" << endl;
 		cin >> rep;
 	} while (rep==0);   ///OK
-	
+
 	int rep = 0;
 	JoueurHumain comp("Claudi",6);
 	do
 	{
-	
+
 	comp.ChoixCible(7, 8);
 	int x = comp.getCibleX();
 	int y = comp.getCibleY();
@@ -31,7 +31,7 @@ void main()
 	cout << "Cible Y: " << y << endl;
 	cout << "Retirer? [0/1]" << endl;
 	cin >> rep;
-	} while (rep==0);   //OK
+	} while (rep==0);   // OK
 
 	Personne J1("Joueur1", 6);
 	cout << "nb bateaux"<<J1.getNbBateaux()<<endl;

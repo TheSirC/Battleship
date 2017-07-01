@@ -30,7 +30,7 @@ public:
 
 		vector<Bateau> getFlotte() { return flotte_; }
 		virtual void ajouterBateau();
-		virtual void ChoixCible(); //on récupère la méthode choixCible soit de JoueurHumain, soit de JoueurOrdi
+		virtual void ChoixCible(); // RÃ©cupÃ¨re la mÃ©thode choixCible soit de JoueurHumain, soit de JoueurOrdi
 };
 
 #endif // !_PERSONNE_

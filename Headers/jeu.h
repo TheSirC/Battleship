@@ -17,7 +17,7 @@ using namespace std;
 class Jeu
 {
 		private:
-				bool quelJoueur_ = 0; // Booléen codant le joueur du tour actuel : 0 pour l'humain, 1  pour l'IA
+				bool quelJoueur_ = 0; // BoolÃ©en codant le joueur du tour actuel : 0 pour l'humain, 1  pour l'IA
 				int nombreBateau_;
 				GrilleLogique
 						grilleHumain_,
@@ -25,7 +25,7 @@ class Jeu
 				affichage
 						GrilleAffichageHumain_,
 						GrilleAffichageOrdi_;
-				
+
 		public:
 				Jeu(string NomJoueur, int nombreBateau_ = 4);
 				~Jeu();
@@ -38,8 +38,7 @@ class Jeu
 				void setNombreBateau(int nombreBateau) { nombreBateau = nombreBateau_; }
 				int getNombreBateau() { return nombreBateau_; }
 
-		
+
 };
 
-#endif // !_JEU_
-
+#endif // _JEU_

@@ -12,7 +12,7 @@ class Bateau
 		int positionX_; // position de la colonne de la proue du bateau
 		int positionY_; // position de la ligne de la proue du bateau
 		int tailleBat_; //taille du bateau
-		int orientation_; //[0 : nord, 1 : est, 2 : sud, 3 :ouest]
+		int orientation_; // [0 : nord, 1 : est, 2 : sud, 3 :ouest]
 
 public:
 		int setPositionX(int positionX) { positionX_ = positionX; }
