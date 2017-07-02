@@ -10,6 +10,7 @@ using namespace cimg_library;
 class affichage
 {
 public:
+		affichage();	
 		affichage(unsigned char couleurGrille[3], int nombreLignes_ = 10, int nombreColonnes_ = 10); // Crée une grille avec les paramètres donnés par défaut ou ceux rentrés par l'utilisateur
 		void setNombreLignes(int nb) { nombreLignes_ = nb; }
 		void setNombreColonnes(int nb) { nombreColonnes_ = nb; }

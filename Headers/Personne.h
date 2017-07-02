@@ -29,6 +29,7 @@ public:
 		string getNom() { return nom_; }
 
 		vector<Bateau> getFlotte() { return flotte_; }
+		//int getFlotte() { return flotte_[0].getTaille(); }
 		virtual void ajouterBateau();
 		virtual void ChoixCible(); // Récupère la méthode choixCible soit de JoueurHumain, soit de JoueurOrdi
 };

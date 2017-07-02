@@ -11,6 +11,14 @@ Personne::Personne(const string &nom, int nbBateaux)
 	flotte_.resize(nbBateaux_);
 }
 
+void Personne::ajouterBateau()
+{
+}
+
+void Personne::ChoixCible()
+{
+}
+
 
 
 

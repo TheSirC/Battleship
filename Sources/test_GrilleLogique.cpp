@@ -1,6 +1,6 @@
 #include "../Headers/GrilleLogique.h"
 
-int main()
+/*int main()
 {
 		GrilleLogique Grille = GrilleLogique();
 		Grille.afficherGrille();
@@ -18,4 +18,4 @@ int main()
 		cout << Grille.getEtatCase(0, 3) << endl; Grille.afficherGrille();
 		system("PAUSE");
 		return 0;
-}
+}*/

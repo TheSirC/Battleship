@@ -9,7 +9,7 @@ affichage::affichage(unsigned char couleurGrille[3], int nombreLignes_, int nomb
 		for (int i = 1; i < nombreLignes_; i++) grid.draw_line(0, (tailleEcran / nombreLignes_)* i, tailleEcran, (tailleEcran / nombreLignes_) * i, couleurGrille); // Trace les lignes horizontales
 		for (int i = 1; i < nombreColonnes_; i++) grid.draw_line((tailleEcran / nombreColonnes_)* i, 0, (tailleEcran / nombreColonnes_) * i, tailleEcran, couleurGrille); // Trace les lignes verticales 
 		CImgDisplay disp(grid, "Bataille navale", 0, false, false); // Crée la fenêtre associée à la grille
-		disp.move((CImgDisplay::screen_width() - tailleEcran) / 2, (CImgDisplay::screen_height() - disp.height()) / 2); // Dépalce la fenêtre au centre de l'écran
+		disp.move((CImgDisplay::screen_width() - tailleEcran) / 2, (CImgDisplay::screen_height() - disp.height()) / 2); // Déplace la fenêtre au centre de l'écran
 		CImg<unsigned char> scene = grid;
 		// Attend qu'un évènement se produise sur la fenêtre sélectionnée
 		disp.wait();
@@ -29,3 +29,6 @@ affichage::affichage(unsigned char couleurGrille[3], int nombreLignes_, int nomb
 				disp.wait();
 		}
 }
+
+affichage::affichage()
+{}

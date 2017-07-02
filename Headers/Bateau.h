@@ -15,9 +15,9 @@ class Bateau
 		int orientation_; // [0 : nord, 1 : est, 2 : sud, 3 :ouest]
 
 public:
-		int setPositionX(int positionX) { positionX_ = positionX; }
-		int setPositionY(int positionY) { positionY_ = positionY; }
-		int setOrientation(int orientation) { orientation_ = orientation; }
+		void setPositionX(int positionX) { positionX_ = positionX; }
+		void setPositionY(int positionY) { positionY_ = positionY; }
+		void setOrientation(int orientation) { orientation_ = orientation; }
 
 		int getPositionX() { return positionX_; }
 		int getPositionY() { return positionY_; }

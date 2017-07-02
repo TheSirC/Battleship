@@ -59,6 +59,7 @@ void Menu::executerOption(const string &nom, bool &fin)
 {
 	fin = false;
 	if (nom == "Quitter") fin = quitter();
+
 	/*A décommenter lorsque les fonctions idoines seront prêtes*/
 	/*else if (nom == "Jouer") jeu();
 	else if (nom == "Charger") charger();
@@ -72,13 +73,13 @@ void Menu::executerOption(const string &nom, bool &fin)
 bool Menu::quitter()
 {
 	bool fin = false;
-	string reponse;
+	char reponse;
 
 	cout << "Voulez-vous vraiment sortir de l'application (o/n) ? ";
 	cin >> reponse;
-	if ((reponse == "o") || (reponse == "O")) fin = true;
+	if ((reponse == 'o') || (reponse == 'O')) return fin = true;
 
-		while ((reponse != "o") || (reponse != "O") || (reponse != "n") || (reponse != "N"))
+		while ((reponse != 'o') && (reponse != 'O') && (reponse != 'n') && (reponse != 'N'))
 		{
 				cout << "Reponse erronnee. Veuillez ecrire 'o' ou 'n' : ";
 				cin >> reponse;

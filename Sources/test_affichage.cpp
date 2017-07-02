@@ -1,5 +1,6 @@
 #include "../Headers/affichage.h"
 
+/*
 int main() {
 
 	unsigned char couleurGrille[3] = { 0,0,255 };
@@ -7,3 +8,4 @@ int main() {
 
 	return 0;
 }
+*/

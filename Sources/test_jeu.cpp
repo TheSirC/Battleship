@@ -1,7 +1,7 @@
 #include "../Headers/jeu.h"
 
-int main()
+/*int main()
 {
 		Jeu *BatailleNavale = new Jeu("Humain",4);
 
-}
+}*/
