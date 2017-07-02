@@ -4,7 +4,7 @@ using namespace std;
 #include "../Headers/JoueurOrdi.h"
 #include "../Headers/Personne.h"
 
-void main()
+int main()
 {
 	int rep = 0;
 	do
@@ -17,10 +17,10 @@ void main()
 		cout << "Cible Y: " << y << endl;
 		cout << "Retirer? [0/1]" << endl;
 		cin >> rep;
-	} while (rep==0);   ///OK
+	} while (rep == 0);   /// OK
 
-	int rep = 0;
-	JoueurHumain comp("Claudi",6);
+	rep = 0;
+	JoueurHumain comp("Claudy",6);
 	do
 	{
 
@@ -31,19 +31,19 @@ void main()
 	cout << "Cible Y: " << y << endl;
 	cout << "Retirer? [0/1]" << endl;
 	cin >> rep;
-	} while (rep==0);   // OK
+	} while (rep == 0);   // OK
 
 	Personne J1("Joueur1", 6);
-	cout << "nb bateaux"<<J1.getNbBateaux()<<endl;
+	cout << "nb bateaux" << J1.getNbBateaux()<<endl;
 	cout << "nom" << J1.getNom() << endl;
-	cout << "flotte" << J1.getFlotte << endl;
+	// cout << "flotte" << J1.getFlotte() << endl;
 	J1.setNom("Joueur2");
-	J1.ajouterBateau(1,1,1,4,1);
+	// J1.ajouterBateau(1,1,1,4,1);
 	J1.setNbBateaux(8);
 	cout << "modification" << endl;
 	cout << "nb bateaux" << J1.getNbBateaux() << endl;
 	cout << "nom" << J1.getNom() << endl;
-	cout << "flotte" << J1.getFlotte << endl;
-
+	// cout << "flotte" << J1.getFlotte << endl;
+	return 0;
 
 }
